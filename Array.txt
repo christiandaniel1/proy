@@ -1,0 +1,111 @@
+var sports = ['soccer', 'baseball'];
+sports.push('football', 'swimming');
+
+  ['soccer', 'baseball', 'football', 'swimming']
+
+-----------
+
+tareas:[ { titulo:'tarea 1',  hecho:true } ]
+
+this.tareas.push({titulo:this.tareas.titulo,hecho:false })
+----------------
+
+ a = [1,2,3];
+ for (i=0;i<a.length;i++) {
+    // hacer algo con a[i];
+ }
+----
+
+a = [1,2,3];
+ a.foreach ( function (elemento) {
+    // hacer algo con elemento
+ });
+---------
+
+var a = ['hola','adios'];
+a.indexOf('hola');  // devuelve 0
+a.indexOf('adios');  // devuelve 1 
+a.indexOf('tres'); // devuelve -1
+
+----------
+var array1 = ['a', 'b', 'c'];
+
+
+array1.forEach(function(element)
+    {
+  console.log(element);
+
+   });
+-------------------
+
+var words = ['uno', 'dos', 'tres', 'cuatro'];
+
+words.forEach(function(word) {
+  
+console.log(word);
+ 
+ if (word === 'dos')
+ {
+ console.log('si hay');
+  }
+
+});
+
+-------------------------
+
+var miObjeto = { id: 1, nombre: "RAFAEL PEREZ", edad: 23, activo: true }; 
+console.log(miObjeto.nombre)
+
+------
+
+var person = {firstName:"John", lastName:"Doe", age:46};
+
+console.log(person["firstName"]);
+
+--------
+var miObjeto = {firstName:"John", lastName:"Doe", age:46};
+
+
+for( propiedad in miObjeto ) {
+
+     console.log( propiedad + " = " + miObjeto[propiedad] );
+
+ }
+
+----------------------------
+var datos=[{titulo:'tarea 1',hecho:true }, { titulo:'tarea 2', hecho:false},{titulo:'tarea 3',hecho:true} ] ; 
+console.log(datos[0]["titulo"])
+-----------
+
+var datos=[{titulo:'tarea 1',hecho:true }, { titulo:'tarea 2', hecho:false},{titulo:'tarea 3',hecho:true} ] ;
+ 
+
+datos.forEach(function(element)
+ {
+	
+		console.log(element["titulo"])
+
+ 
+		console.log(element["hecho"])
+		console.log("----"])
+  });
+
+-----------
+
+var datos=[{titulo:'tarea 1',hecho:true }, { titulo:'tarea 2', hecho:false},{titulo:'tarea 3',hecho:true} ] ;
+ 
+
+datos.forEach(function(element)
+ {
+	
+		
+for( dato in element ) {
+
+                    console.log( dato + " = " + element[dato] );
+
+                 }
+		console.log("----"])
+  });
+
+
+
