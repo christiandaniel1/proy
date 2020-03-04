@@ -23,6 +23,7 @@
 			<span>Ciudad de residencia</span>
 			<div class="header-place-container">
 				<p>
+					crema
 					<?php if (isset($_SESSION['city'])): ?>
 						<?php echo $_SESSION['city'] ?>
 						<?php else: ?>
