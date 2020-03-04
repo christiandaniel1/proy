@@ -5,7 +5,7 @@
 			<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1200px; height:595px; position: absolute; left: 0px; top: 0px; display: none;">
 			</div>
 		</div>
-		<div id='_preload_div_' style='display: inline-block; height:595px; width: 1200px; vertical-align=middle;position:absolute;left:0px;top:0px;text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif style='vertical-align: middle;'/>
+		<div id='ddd_preload_div_' style='display: inline-block; height:595px; width: 1200px; vertical-align=middle;position:absolute;left:0px;top:0px;text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif style='vertical-align: middle;'/>
 		</div>
 	</div>
 
