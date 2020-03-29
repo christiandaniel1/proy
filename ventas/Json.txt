@@ -1,0 +1,119 @@
+mijs.js :
+
+function listado() {
+   /* if (str == "") {
+        document.getElementById("listado").innerHTML = "";
+        return;
+    } else {*/      
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {                
+                document.getElementById("listado").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","listadoAjax.php",true);
+        xmlhttp.send();
+    //}
+}
+
+function listadoJsonbd() {
+    /* if (str == "") {
+         document.getElementById("listado").innerHTML = "";
+         return;
+     } else {*/      
+         if (window.XMLHttpRequest) {
+             // code for IE7+, Firefox, Chrome, Opera, Safari
+             xmlhttp = new XMLHttpRequest();
+         } else {
+             // code for IE6, IE5
+             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+         }
+         xmlhttp.onreadystatechange = function() {            
+             var result="<table border='1'>";
+             if (this.readyState == 4 && this.status == 200) { 
+                var misdatos = new Array()
+               misdatos = JSON.parse(this.responseText);
+                console.log(misdatos);
+                
+                misdatos.forEach(function(element)
+                {  
+                    result+= "<tr>"
+                        for( dato in element ) {
+                            result+="<td>"+element[dato]+"</td>"; 
+                        }
+                    result+="</tr>"
+                });
+                result+="</table>"
+                            
+                 document.getElementById("listadojson").innerHTML = result;
+             }
+         };
+         xmlhttp.open("GET","listadoJson.php",true);
+         xmlhttp.send();
+     //}
+ }
+
+html :
+
+<br>
+<input type="button" href="javascript:;" onclick="listado();return false;" value="listado Noticias"/>
+ <div id="listado"></div>
+ <br>
+ <input type="button" href="javascript:;" onclick="listadoJsonbd();return false;" value="listado Json"/>
+ <div id="listadojson"></div>
+ <br>
+
+-----
+php :
+
+listadoAjax.php
+
+<?php 
+include'clseventos.php';
+$objContenido = new contenido;
+$lasnoticias = $objContenido -> noticias();
+//echo "este es el listado";
+$out = '<table>';
+while($lista = mysqli_fetch_assoc($lasnoticias))
+{
+    $out.= '<tr><td>'. $lista['id'] .'<td><td>'. $lista['titulo'] .'<td></tr>';
+}
+echo $out.='</table>';
+mysqli_free_result($lasnoticias);  
+?> 
+
+listadoJson.php :
+
+<?php 
+include'clseventos.php';
+$objContenido = new contenido;
+$lasnoticias = $objContenido -> noticias();
+//echo "este es el listado";
+
+while($lista = mysqli_fetch_assoc($lasnoticias))
+{
+    $out.= '<tr><td>'. $lista['id'] .'<td><td>'. $lista['titulo'] .'<td></tr>';
+
+    $clientes[] = array('id'=> $lista['id'], 'nombre'=> $lista['titulo'], 'imagen'=> $lista['imagen']);
+}
+
+mysqli_free_result($lasnoticias); 
+
+/*mysqli_close($conexion) 
+or die("Ha sucedido un error inexperado en la desconexion de la base de datos");*/
+
+$json_string = json_encode($clientes);
+echo $json_string;
+
+//Si queremos crear un archivo json, sería de esta forma:
+/*
+$file = 'clientes.json';
+file_put_contents($file, $json_string);
+*/
+?> 

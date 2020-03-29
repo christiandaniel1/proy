@@ -1,0 +1,76 @@
+
+var paises = ['peru', 'argentina', 'ecuador', 'peru', 'chile', 'venezuela', 'peru'];
+Devolver la cantidad con valor igual a peru.
+resultado : 3 ;
+------------------
+
+var numbers = [7, 4, 2 ,10 ,6 , 9];
+Devolver la suma total con los numeros mayor a 6.
+resultado : 26
+--------------
+var numeros = [1, 5, 10, 15];
+imprimir cada valor multiplicado por 3 :
+resultado : 
+3
+15
+30
+45
+------------
+var paises = ['peru', 'argentina', 'ecuador', 'peru', 'chile', 'venezuela'];
+devolver el indice del array con chile.
+resultado : 4 ;
+
+-----
+var numbers = [2, 3, 4, 5];
+crear nuevo array multiplicado por 3 ..
+resultado : [6, 9, 12, 15]
+
+------------
+
+var paises = ['peru', 'argentina', 'ecuador', 'alemania', 'chile', 'venezuela'];
+crear nuevo array , solo los valores cuyo numero de caracteres sea mayor a 6 .
+resultado array : ['argentina', 'ecuador', 'alemania','venezuela'];
+
+------
+var paisesciudades = [
+    {pais:'peru',ciudades:5},
+    {pais:'chile',ciudades:13},
+    {pais:'ecuador',ciudades:7},
+    {pais:'peru',ciudades:3},
+    {pais:'bolivia',ciudades:7},
+    {pais:'chile',ciudades:9},
+    {pais:'peru',ciudades:10},
+    ];
+
+Array de objetos, devolver la cantidad con valores igual a peru.
+resultado : 3 ;
+----------------------------
+
+var paisesciudades = [
+    {pais:'peru',mes:'enero',ciudades:5},
+    {pais:'chile',mes:'junio',ciudades:13},
+    {pais:'ecuador',mes:'enero',ciudades:7},
+    {pais:'peru',mes:'abril',ciudades:3},
+    {pais:'bolivia',mes:'setiembre',ciudades:7},
+    {pais:'chile',mes:'enero',ciudades:9},
+    {pais:'peru',mes:'octubre',ciudades:10},
+    ];
+
+Array de objetos, devolver nuevo array con los meses que pertenecen a solo peru.
+resultado : ["enero", "abril", "octubre"] ;
+
+---------------------
+
+var paisesciudades = [
+    {pais:'peru',ciudades:5},
+    {pais:'chile',ciudades:13},
+    {pais:'ecuador',ciudades:7},
+    {pais:'peru',ciudades:3},
+    {pais:'bolivia',ciudades:7},
+    {pais:'chile',ciudades:9},
+    {pais:'peru',ciudades:10},
+    ];
+
+Array de objetos, devolver la suma total de las ciudades de solo peru.
+resultado : 18 ;
+

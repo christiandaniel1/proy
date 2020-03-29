@@ -1,0 +1,4 @@
+hacer pull al clonar:
+git clone http...
+git remote -v   (para saber origen)
+git pull origin master
